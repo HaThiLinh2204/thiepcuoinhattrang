@@ -364,7 +364,7 @@ section{padding:72px 0;}
   margin:4px 0 18px;
   box-shadow:0 10px 24px -14px rgba(0,0,0,.5);
 }
-.map-embed--on-dark iframe{width:100%;height:180px;border:0;display:block;}
+.map-embed--on-dark iframe{width:100%;height:100px;border:0;display:block;}
 
 /* ============ Big date section ============ */
 .bigdate-section{background:var(--rose-50);text-align:center;}
