@@ -142,15 +142,24 @@ if (elDays) {
 var lightbox = document.getElementById('lightbox');
 var lightboxImg = document.getElementById('lightbox-img');
 var lightboxClose = document.getElementById('lightbox-close');
+var lightboxPrev = document.getElementById('lightbox-prev');
+var lightboxNext = document.getElementById('lightbox-next');
 var galleryImgs = document.querySelectorAll('.gallery-item img');
 
 if (lightbox && lightboxImg && galleryImgs.length) {
   var lastFocusedGallery = null;
+  var currentIndex = 0;
 
-  var openLightbox = function (img) {
-    lastFocusedGallery = document.activeElement;
+  var showImage = function (index) {
+    currentIndex = (index + galleryImgs.length) % galleryImgs.length;
+    var img = galleryImgs[currentIndex];
     lightboxImg.src = img.src;
     lightboxImg.alt = img.alt;
+  };
+
+  var openLightbox = function (index) {
+    lastFocusedGallery = document.activeElement;
+    showImage(index);
     lightbox.classList.add('is-open');
     document.body.classList.add('no-scroll');
   };
@@ -162,17 +171,37 @@ if (lightbox && lightboxImg && galleryImgs.length) {
     if (lastFocusedGallery && lastFocusedGallery.focus) lastFocusedGallery.focus();
   };
 
-  galleryImgs.forEach(function (img) {
-    img.addEventListener('click', function () { openLightbox(img); });
+  galleryImgs.forEach(function (img, index) {
+    img.addEventListener('click', function () { openLightbox(index); });
   });
 
   if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  if (lightboxPrev) lightboxPrev.addEventListener('click', function () { showImage(currentIndex - 1); });
+  if (lightboxNext) lightboxNext.addEventListener('click', function () { showImage(currentIndex + 1); });
+
   lightbox.addEventListener('click', function (e) {
     if (e.target === lightbox) closeLightbox();
   });
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+    if (!lightbox.classList.contains('is-open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+    if (e.key === 'ArrowRight') showImage(currentIndex + 1);
   });
+
+  var touchStartX = null;
+  lightbox.addEventListener('touchstart', function (e) {
+    touchStartX = e.changedTouches[0].clientX;
+  }, { passive: true });
+  lightbox.addEventListener('touchend', function (e) {
+    if (touchStartX === null) return;
+    var deltaX = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(deltaX) > 40) {
+      if (deltaX < 0) showImage(currentIndex + 1);
+      else showImage(currentIndex - 1);
+    }
+    touchStartX = null;
+  }, { passive: true });
 }
 
 // ---------- Copy account number ----------

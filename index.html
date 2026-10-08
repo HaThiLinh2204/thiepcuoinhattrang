@@ -204,6 +204,8 @@
         <div class="gallery-item reveal reveal-scale"><img src="assets/img/couple-5.jpg" alt="Ảnh cưới 4" loading="lazy"></div>
         <div class="gallery-item reveal reveal-scale"><img src="assets/img/couple-6.jpg" alt="Ảnh cưới 5" loading="lazy"></div>
         <div class="gallery-item reveal reveal-scale"><img src="assets/img/bride.jpg" alt="Ảnh cưới 6" loading="lazy"></div>
+        <div class="gallery-item reveal reveal-scale"><img src="assets/img/couple-3.jpg" alt="Ảnh cưới 7" loading="lazy"></div>
+        <div class="gallery-item reveal reveal-scale"><img src="assets/img/couple-7.jpg" alt="Ảnh cưới 6" loading="lazy"></div>
       </div>
       <p class="gallery-quote reveal">As the clouds and mist dissipate<br>love you and everyone knows it</p>
     </div>
@@ -212,7 +214,9 @@
   <!-- Lightbox for gallery images -->
   <div id="lightbox" class="lightbox">
     <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Đóng ảnh">&times;</button>
+    <button type="button" class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Ảnh trước">&#10094;</button>
     <img src="" alt="" class="lightbox-img" id="lightbox-img">
+    <button type="button" class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Ảnh tiếp theo">&#10095;</button>
   </div>
 
   <!-- GIFT / QR -->
@@ -268,6 +272,13 @@
     <div class="container">
       <h2 class="section-title reveal"><span>Gửi Lời</span> Chúc Phúc</h2>
       <div id="wish-list" class="wish-list"></div>
+      <button type="button" id="footer-wish-btn" class="footer-wish-btn" aria-label="Gửi lời chúc" aria-haspopup="dialog" aria-controls="wish-modal">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m2 6 9.2 7a1.5 1.5 0 0 0 1.8 0L22 6"/>
+        </svg>
+        <span>Gửi lời chúc</span>
+      </button>
     </div>
   </section>
 
@@ -275,13 +286,6 @@
     <div class="hero-double-happiness small">囍</div>
     <p>Hà Văn Nhật &amp; Nguyễn Thu Trang</p>
     <p class="footer-sub">18 . 10 . 2026 — Cảm ơn vì đã là một phần trong ngày hạnh phúc của chúng tôi</p>
-    <button type="button" id="footer-wish-btn" class="footer-wish-btn" aria-label="Gửi lời chúc" aria-haspopup="dialog" aria-controls="wish-modal">
-      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <rect x="2" y="4" width="20" height="16" rx="2"/>
-        <path d="m2 6 9.2 7a1.5 1.5 0 0 0 1.8 0L22 6"/>
-      </svg>
-      <span>Gửi lời chúc</span>
-    </button>
   </footer>
 
   <!-- Wish popup modal -->
