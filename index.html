@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Nhật &amp; Trang - Thiệp Cưới</title>
+<meta name="description" content="Thiệp cưới online Hà Văn Nhật & Nguyễn Thu Trang - Trân trọng kính mời">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💍</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- Envelope intro overlay -->
+<div id="envelope-overlay" class="envelope-overlay">
+  <div class="envelope">
+    <div class="envelope-names">Nhật <span>&amp;</span> Trang</div>
+    <div class="envelope-sub">Trân trọng kính mời</div>
+    <button id="open-invite" class="btn-open">Mở Thiệp Mời</button>
+  </div>
+</div>
+
+<div id="site" class="site hidden">
+
+  <!-- Floating music toggle -->
+  <button id="music-toggle" class="music-toggle is-playing" aria-label="Bật / tắt nhạc" aria-pressed="true">
+    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+  </button>
+  <audio id="bg-music" src="assets/audio/ta-la-cua-nhau.mp3" loop preload="none"></audio>
+
+  <!-- HERO -->
+  <header class="hero" id="home">
+    <div class="hero-frame">
+      <p class="hero-eyebrow">Save The Date</p>
+      <p class="hero-bigdate">18 . 10 . 2026</p>
+      <h1 class="hero-title floaty"><span>Nhật</span><em>&amp;</em><span>Trang</span></h1>
+    </div>
+  </header>
+
+  <!-- GROOM / BRIDE MINI CARDS -->
+  <section class="gb-section" id="groombride">
+    <div class="container">
+      <div class="gb-grid">
+        <article class="gb-card reveal reveal-left">
+          <div class="gb-photo gb-photo--groom"><img src="assets/img/couple-1.jpg" alt="Chú rể Hà Văn Nhật" loading="lazy"></div>
+          <p class="gb-label">Chú rể</p>
+          <h3 class="gb-name">Văn Nhật</h3>
+        </article>
+        <article class="gb-card reveal reveal-right" style="--reveal-delay:.12s">
+          <div class="gb-photo"><img src="assets/img/couple-7.jpg" alt="Cô dâu Nguyễn Thu Trang" loading="lazy"></div>
+          <p class="gb-label">Cô dâu</p>
+          <h3 class="gb-name">Thu Trang</h3>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WELCOME BANNER -->
+  <section class="welcome-section" id="welcome">
+    <div class="container">
+      <p class="welcome-kinhmoi reveal">TRÂN TRỌNG KÍNH MỜI</p>
+      <p class="welcome-script reveal floaty">Quý Khách</p>
+      <p class="welcome-sub reveal">Dự Tiệc mừng Lễ Thành Hôn của chúng mình</p>
+
+      <div class="welcome-photo reveal">
+        <img src="assets/img/couple-5.jpg" alt="Nhật và Trang" loading="lazy">
+        <span class="welcome-ribbon">WELCOME TO OUR WEDDING</span>
+      </div>
+
+      <div class="mini-cal reveal reveal-scale" aria-label="Lịch tháng 10 năm 2026, ngày cưới 18">
+        <p class="mini-cal-title">Tháng 10 · 2026</p>
+        <div class="mini-cal-grid">
+          <span class="mini-cal-dow">T2</span><span class="mini-cal-dow">T3</span><span class="mini-cal-dow">T4</span><span class="mini-cal-dow">T5</span><span class="mini-cal-dow">T6</span><span class="mini-cal-dow">T7</span><span class="mini-cal-dow">CN</span>
+          <span class="mini-cal-day is-muted">28</span><span class="mini-cal-day is-muted">29</span><span class="mini-cal-day is-muted">30</span>
+          <span class="mini-cal-day">1</span><span class="mini-cal-day">2</span><span class="mini-cal-day">3</span><span class="mini-cal-day">4</span>
+          <span class="mini-cal-day">5</span><span class="mini-cal-day">6</span><span class="mini-cal-day">7</span><span class="mini-cal-day">8</span><span class="mini-cal-day">9</span><span class="mini-cal-day">10</span><span class="mini-cal-day">11</span>
+          <span class="mini-cal-day">12</span><span class="mini-cal-day">13</span><span class="mini-cal-day">14</span><span class="mini-cal-day is-event">15</span><span class="mini-cal-day">16</span><span class="mini-cal-day">17</span><span class="mini-cal-day is-wedding">18</span>
+          <span class="mini-cal-day">19</span><span class="mini-cal-day">20</span><span class="mini-cal-day">21</span><span class="mini-cal-day">22</span><span class="mini-cal-day">23</span><span class="mini-cal-day">24</span><span class="mini-cal-day">25</span>
+          <span class="mini-cal-day">26</span><span class="mini-cal-day">27</span><span class="mini-cal-day">28</span><span class="mini-cal-day">29</span><span class="mini-cal-day">30</span><span class="mini-cal-day">31</span><span class="mini-cal-day is-muted">1</span>
+        </div>
+        <div class="mini-cal-legend">
+          <span><i class="dot dot-event"></i>15 — Nạp tài &amp; Cơm thân mật</span>
+          <span><i class="dot dot-wedding"></i>18 — Lễ Thành Hôn</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENT CARDS -->
+  <section class="events-section" id="events">
+    <div class="container">
+      <article class="event-card reveal reveal-left">
+        <p class="event-name">LỄ NẠP TÀI</p>
+        <p class="event-dow">Thứ Năm &nbsp;—&nbsp; 08:00</p>
+        <p class="event-date">15.10.2026</p>
+        <p class="event-lunar">Tức ngày 06 tháng 09 năm Bính Ngọ</p>
+        <p class="event-venue">TẠI TƯ GIA NHÀ GÁI</p>
+        <p class="event-addr">SN 25, Đường số 2, Thôn Trinh Nga, Hoằng Sơn, Thanh Hoá</p>
+        <div class="map-embed map-embed--on-dark">
+          <iframe title="Bản đồ nhà gái" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=19.913402,105.823778&output=embed"></iframe>
+        </div>
+        <a class="btn-direction" target="_blank" rel="noopener"
+          href="https://maps.app.goo.gl/bWEyTdEci7NNxVnb8">Xem chỉ đường</a>
+      </article>
+
+      <article class="event-card reveal reveal-right" style="--reveal-delay:.12s">
+        <p class="event-name">BỮA CƠM THÂN MẬT</p>
+        <p class="event-dow">Thứ Năm &nbsp;—&nbsp; 16:30</p>
+        <p class="event-date">15.10.2026</p>
+        <p class="event-lunar">Tức ngày 06 tháng 09 năm Bính Ngọ</p>
+        <p class="event-venue">TẠI TƯ GIA NHÀ GÁI</p>
+        <p class="event-addr">SN 25, Đường số 2, Thôn Trinh Nga, Hoằng Sơn, Thanh Hoá</p>
+        <div class="map-embed map-embed--on-dark">
+          <iframe title="Bản đồ nhà gái" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=19.913402,105.823778&output=embed"></iframe>
+        </div>
+        <a class="btn-direction" target="_blank" rel="noopener"
+          href="https://maps.app.goo.gl/bWEyTdEci7NNxVnb8">Xem chỉ đường</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- WE GOT MARRIED / LỄ THÀNH HÔN -->
+  <section class="bigdate-section" id="thanhhon">
+    <div class="container">
+      <p class="bigdate-script reveal floaty">We got married</p>
+      <h2 class="bigdate-title reveal">LỄ THÀNH HÔN</h2>
+      <div class="bigdate-row reveal">
+        <div class="bigdate-col"><span class="bigdate-dow">CHỦ NHẬT</span></div>
+        <div class="bigdate-col bigdate-col--num">
+          <span class="bigdate-month">THÁNG 10</span>
+          <span class="bigdate-num glow">18</span>
+          <span class="bigdate-year">NĂM 2026</span>
+        </div>
+      </div>
+      <p class="bigdate-time reveal">08 : 00</p>
+      <p class="bigdate-lunar reveal">Tức ngày 09 tháng 09 năm Bính Ngọ</p>
+
+      <div class="bigdate-photo reveal reveal-scale"><img src="assets/img/couple-3.jpg" alt="Nhật và Trang" loading="lazy"></div>
+
+      <div class="address-card reveal reveal-scale">
+        <p class="address-eyebrow">ADDRESS</p>
+        <p class="address-title">TƯ GIA NHÀ TRAI</p>
+        <p class="address-text">SN 31, Đường số 3, Thôn Trinh Nga<br>Hoằng Sơn, Thanh Hoá</p>
+        <div class="map-embed">
+          <iframe title="Bản đồ nhà trai" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=19.912274,105.823232&output=embed"></iframe>
+        </div>
+        <a class="btn-direction btn-direction--light" target="_blank" rel="noopener"
+          href="https://maps.app.goo.gl/2QPdaUZA9zRKdPyM8">Xem chỉ đường</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section class="countdown-section">
+    <div class="container">
+      <h2 class="section-title light reveal"><span>Đếm Ngược</span> Ngày Cưới</h2>
+      <div id="countdown" class="countdown">
+        <div class="cd-box"><span id="cd-days">00</span><small>Ngày</small></div>
+        <div class="cd-box"><span id="cd-hours">00</span><small>Giờ</small></div>
+        <div class="cd-box"><span id="cd-mins">00</span><small>Phút</small></div>
+        <div class="cd-box"><span id="cd-secs">00</span><small>Giây</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAMILY -->
+  <section class="family-section" id="family">
+    <div class="container">
+      <h2 class="section-title reveal"><span>Nhà Trai</span> 囍 <span>Nhà Gái</span></h2>
+      <div class="family-grid">
+        <div class="family-col reveal reveal-left">
+          <p class="family-parent">Ông: Hà Văn Tiệp</p>
+          <p class="family-parent">Bà: Lê Thị Xuyến</p>
+          <p class="family-addr">SN 31 Đường số 3, Thôn Trinh Nga<br>Hoằng Sơn, Thanh Hoá</p>
+        </div>
+        <div class="family-divider floaty-fast">♥</div>
+        <div class="family-col reveal reveal-right">
+          <p class="family-parent">Ông: Nguyễn Văn Mạnh</p>
+          <p class="family-parent">Bà: Hà Thị Tâm</p>
+          <p class="family-addr">SN 25 Đường số 2, Thôn Trinh Nga<br>Hoằng Sơn, Thanh Hoá</p>
+        </div>
+      </div>
+      <div class="family-names reveal">
+        <span class="family-name floaty">Văn Nhật</span>
+        <span class="family-ring floaty-fast">💍</span>
+        <span class="family-name floaty-rev">Thu Trang</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <h2 class="section-title reveal"><span>Khoảnh Khắc</span> Của Chúng Tôi</h2>
+      <div class="gallery">
+        <div class="gallery-item reveal reveal-scale"><img src="assets/img/couple-1.jpg" alt="Ảnh cưới 1" loading="lazy"></div>
+        <div class="gallery-item reveal reveal-scale"><img src="assets/img/couple-2.jpg" alt="Ảnh cưới 2" loading="lazy"></div>
+        <div class="gallery-item reveal reveal-scale"><img src="assets/img/couple-4.jpg" alt="Ảnh cưới 3" loading="lazy"></div>
+        <div class="gallery-item reveal reveal-scale"><img src="assets/img/couple-5.jpg" alt="Ảnh cưới 4" loading="lazy"></div>
+        <div class="gallery-item reveal reveal-scale"><img src="assets/img/couple-6.jpg" alt="Ảnh cưới 5" loading="lazy"></div>
+        <div class="gallery-item reveal reveal-scale"><img src="assets/img/bride.jpg" alt="Ảnh cưới 6" loading="lazy"></div>
+      </div>
+      <p class="gallery-quote reveal">As the clouds and mist dissipate<br>love you and everyone knows it</p>
+    </div>
+  </section>
+
+  <!-- GIFT / QR -->
+  <section class="gift-section" id="gift">
+    <div class="container">
+      <div class="gift-illus reveal floaty-fast">🤵‍♂️🎁👰‍♀️</div>
+      <h2 class="section-title reveal"><span>Gửi Quà</span> Tới Cô Dâu Chú Rể</h2>
+      <p class="gift-note reveal">Sự hiện diện của quý khách là niềm vinh hạnh cho gia đình chúng tôi.<br>
+      Nếu ở xa không thể tới chung vui, xin gửi lời chúc phúc qua mã QR bên dưới.</p>
+      <div class="gift-grid">
+        <div class="gift-card reveal reveal-left">
+          <img src="assets/img/qr-groom.jpg" alt="Mã QR mừng cưới chú rể BIDV" loading="lazy">
+          <div class="gift-info">
+            <p class="bank">BIDV — CN Thanh Hoá</p>
+            <p class="acc-name">HA VAN NHAT</p>
+            <button class="btn-copy" data-copy="8888773071" aria-label="Sao chép số tài khoản">
+              8888773071
+              <span class="copy-icon">
+                <svg class="icon-copy" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+                <svg class="icon-check" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5"/>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class="gift-card reveal reveal-right">
+          <img src="assets/img/qr-bride.jpg" alt="Mã QR mừng cưới cô dâu Sacombank" loading="lazy">
+          <div class="gift-info">
+            <p class="bank">Sacombank</p>
+            <p class="acc-name">NGUYEN THU TRANG</p>
+            <button class="btn-copy" data-copy="030094698762" aria-label="Sao chép số tài khoản">
+              030094698762
+              <span class="copy-icon">
+                <svg class="icon-copy" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+                <svg class="icon-check" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5"/>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WISHES -->
+  <section class="wish-section" id="wish">
+    <div class="container">
+      <h2 class="section-title reveal"><span>Gửi Lời</span> Chúc Phúc</h2>
+      <div id="wish-list" class="wish-list"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="hero-double-happiness small">囍</div>
+    <p>Hà Văn Nhật &amp; Nguyễn Thu Trang</p>
+    <p class="footer-sub">18 . 10 . 2026 — Cảm ơn vì đã là một phần trong ngày hạnh phúc của chúng tôi</p>
+  </footer>
+
+  <!-- Floating back-to-top -->
+  <a href="#home" id="back-to-top" class="back-to-top" aria-label="Lên đầu trang">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 19V5"/>
+      <path d="M5 12l7-7 7 7"/>
+    </svg>
+  </a>
+
+  <!-- Floating wish bubbles layer -->
+  <div id="wish-bubbles" class="wish-bubbles" aria-hidden="true"></div>
+
+  <!-- Fixed bottom action bar -->
+  <form id="wish-bar" class="wish-bar">
+    <input type="text" id="bar-name" class="wish-bar-name" placeholder="Tên của bạn" required maxlength="40">
+    <input type="text" id="bar-msg" class="wish-bar-msg" placeholder="Gửi lời chúc..." required maxlength="240">
+    <button type="submit" class="wish-bar-send" aria-label="Gửi lời chúc">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M22 2 11 13"/><path d="M22 2 15 22 11 13 2 9z"/>
+      </svg>
+    </button>
+    <a href="#gift" class="wish-bar-icon" aria-label="Mừng cưới">🎁</a>
+  </form>
+
+</div>
+
+<script type="module" src="assets/js/script.js"></script>
+</body>
+</html>
