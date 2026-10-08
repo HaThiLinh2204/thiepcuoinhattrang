@@ -209,6 +209,12 @@
     </div>
   </section>
 
+  <!-- Lightbox for gallery images -->
+  <div id="lightbox" class="lightbox">
+    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Đóng ảnh">&times;</button>
+    <img src="" alt="" class="lightbox-img" id="lightbox-img">
+  </div>
+
   <!-- GIFT / QR -->
   <section class="gift-section" id="gift">
     <div class="container">
@@ -269,7 +275,36 @@
     <div class="hero-double-happiness small">囍</div>
     <p>Hà Văn Nhật &amp; Nguyễn Thu Trang</p>
     <p class="footer-sub">18 . 10 . 2026 — Cảm ơn vì đã là một phần trong ngày hạnh phúc của chúng tôi</p>
+    <button type="button" id="footer-wish-btn" class="footer-wish-btn" aria-label="Gửi lời chúc" aria-haspopup="dialog" aria-controls="wish-modal">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="2" y="4" width="20" height="16" rx="2"/>
+        <path d="m2 6 9.2 7a1.5 1.5 0 0 0 1.8 0L22 6"/>
+      </svg>
+      <span>Gửi lời chúc</span>
+    </button>
   </footer>
+
+  <!-- Wish popup modal -->
+  <div id="wish-modal" class="wish-modal" role="dialog" aria-modal="true" aria-labelledby="wish-modal-title" hidden>
+    <div class="wish-modal-overlay" data-wish-close></div>
+    <div class="wish-modal-card">
+      <button type="button" class="wish-modal-close" aria-label="Đóng" data-wish-close>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="M6 6l12 12"/></svg>
+      </button>
+      <div class="wish-modal-icon">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m2 6 9.2 7a1.5 1.5 0 0 0 1.8 0L22 6"/>
+        </svg>
+      </div>
+      <h3 id="wish-modal-title">Gửi Lời Chúc Phúc</h3>
+      <form id="wish-modal-form" class="wish-modal-form">
+        <input type="text" id="modal-name" class="wish-modal-input" placeholder="Tên của bạn" required maxlength="40">
+        <textarea id="modal-msg" class="wish-modal-textarea" placeholder="Gửi lời chúc đến cô dâu chú rể..." required maxlength="240" rows="4"></textarea>
+        <button type="submit" class="wish-modal-submit">Gửi lời chúc</button>
+      </form>
+    </div>
+  </div>
 
   <!-- Floating back-to-top -->
   <a href="#home" id="back-to-top" class="back-to-top" aria-label="Lên đầu trang">
@@ -282,17 +317,6 @@
   <!-- Floating wish bubbles layer -->
   <div id="wish-bubbles" class="wish-bubbles" aria-hidden="true"></div>
 
-  <!-- Fixed bottom action bar -->
-  <form id="wish-bar" class="wish-bar">
-    <input type="text" id="bar-name" class="wish-bar-name" placeholder="Tên của bạn" required maxlength="40">
-    <input type="text" id="bar-msg" class="wish-bar-msg" placeholder="Gửi lời chúc..." required maxlength="240">
-    <button type="submit" class="wish-bar-send" aria-label="Gửi lời chúc">
-      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M22 2 11 13"/><path d="M22 2 15 22 11 13 2 9z"/>
-      </svg>
-    </button>
-    <a href="#gift" class="wish-bar-icon" aria-label="Mừng cưới">🎁</a>
-  </form>
 
 </div>
 

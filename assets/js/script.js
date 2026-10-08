@@ -138,6 +138,43 @@ if (elDays) {
   setInterval(tickCountdown, 1000);
 }
 
+// ---------- Gallery lightbox ----------
+var lightbox = document.getElementById('lightbox');
+var lightboxImg = document.getElementById('lightbox-img');
+var lightboxClose = document.getElementById('lightbox-close');
+var galleryImgs = document.querySelectorAll('.gallery-item img');
+
+if (lightbox && lightboxImg && galleryImgs.length) {
+  var lastFocusedGallery = null;
+
+  var openLightbox = function (img) {
+    lastFocusedGallery = document.activeElement;
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add('is-open');
+    document.body.classList.add('no-scroll');
+  };
+
+  var closeLightbox = function () {
+    lightbox.classList.remove('is-open');
+    document.body.classList.remove('no-scroll');
+    lightboxImg.src = '';
+    if (lastFocusedGallery && lastFocusedGallery.focus) lastFocusedGallery.focus();
+  };
+
+  galleryImgs.forEach(function (img) {
+    img.addEventListener('click', function () { openLightbox(img); });
+  });
+
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', function (e) {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+  });
+}
+
 // ---------- Copy account number ----------
 var copyBtns = document.querySelectorAll('.btn-copy');
 copyBtns.forEach(function (copyBtn) {
@@ -172,9 +209,6 @@ copyBtns.forEach(function (copyBtn) {
 
 // ---------- Wishes wall (shared, stored in Firestore) ----------
 var list = document.getElementById('wish-list');
-var bar = document.getElementById('wish-bar');
-var barName = document.getElementById('bar-name');
-var barMsg = document.getElementById('bar-msg');
 var bubbleLayer = document.getElementById('wish-bubbles');
 
 var SAMPLE_WISHES = [
@@ -211,7 +245,7 @@ function spawnWishBubble(wish) {
   var el = document.createElement('div');
   el.className = 'wish-bubble';
   el.innerHTML = '<p><strong>' + escapeHtml(wish.name) + ':</strong> ' + escapeHtml(wish.message) + '</p>';
-  el.style.left = (6 + Math.random() * 50) + '%';
+  el.style.left = (4 + Math.random() * 10) + '%';
   el.style.animationDuration = (6 + Math.random() * 2.5) + 's';
   bubbleLayer.appendChild(el);
   el.addEventListener('animationend', function () {
@@ -254,27 +288,62 @@ if (list) {
   setTimeout(tick, 2200);
 })();
 
-if (bar) {
-  var barSubmitBtn = bar.querySelector('.wish-bar-send');
-  bar.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var name = barName.value.trim();
-    var message = barMsg.value.trim();
-    if (!name || !message) return;
+function submitWish(nameInput, msgInput, submitBtn, onDone) {
+  var name = nameInput.value.trim();
+  var message = msgInput.value.trim();
+  if (!name || !message) return;
 
-    if (barSubmitBtn) barSubmitBtn.disabled = true;
-    addDoc(wishesCol, { name: name, message: message, time: serverTimestamp() })
-      .then(function () {
-        barMsg.value = '';
-        barMsg.focus();
-        var wishSection = document.getElementById('wish');
-        if (wishSection) wishSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      })
-      .catch(function () {
-        window.alert('Gửi lời chúc thất bại, vui lòng thử lại.');
-      })
-      .finally(function () {
-        if (barSubmitBtn) barSubmitBtn.disabled = false;
-      });
+  if (submitBtn) submitBtn.disabled = true;
+  addDoc(wishesCol, { name: name, message: message, time: serverTimestamp() })
+    .then(function () {
+      nameInput.value = '';
+      msgInput.value = '';
+      if (onDone) onDone();
+    })
+    .catch(function () {
+      window.alert('Gửi lời chúc thất bại, vui lòng thử lại.');
+    })
+    .finally(function () {
+      if (submitBtn) submitBtn.disabled = false;
+    });
+}
+
+// ---------- "Send wish" popup modal (opened from footer or bottom bar) ----------
+var wishModal = document.getElementById('wish-modal');
+var footerWishBtn = document.getElementById('footer-wish-btn');
+var wishModalForm = document.getElementById('wish-modal-form');
+var modalName = document.getElementById('modal-name');
+var modalMsg = document.getElementById('modal-msg');
+
+if (wishModal && wishModalForm) {
+  var modalSubmitBtn = wishModalForm.querySelector('.wish-modal-submit');
+  var lastFocused = null;
+
+  function openWishModal() {
+    lastFocused = document.activeElement;
+    wishModal.hidden = false;
+    document.body.classList.add('no-scroll');
+    modalName.focus();
+  }
+
+  function closeWishModal() {
+    wishModal.hidden = true;
+    document.body.classList.remove('no-scroll');
+    if (lastFocused && lastFocused.focus) lastFocused.focus();
+  }
+
+  if (footerWishBtn) footerWishBtn.addEventListener('click', openWishModal);
+
+  wishModal.querySelectorAll('[data-wish-close]').forEach(function (el) {
+    el.addEventListener('click', closeWishModal);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !wishModal.hidden) closeWishModal();
+  });
+
+  wishModalForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    submitWish(modalName, modalMsg, modalSubmitBtn, closeWishModal);
   });
 }
